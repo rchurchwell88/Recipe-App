@@ -22,7 +22,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tF1: UITextField!
     @IBOutlet weak var rBO: UIButton!
     @IBOutlet weak var iFVO: UIView!
-    @IBOutlet weak var lO: UIImageView!
+    @IBOutlet weak var lO: UILabel!
     
     
     
@@ -43,6 +43,14 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         setupLRBackground()
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .portrait
+        } else {
+            return .all
+        }
     }
     
     func setupLRBackground(){

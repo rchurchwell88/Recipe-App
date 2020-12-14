@@ -20,9 +20,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tF2: UITextField!
     @IBOutlet weak var tF1: UITextField!
     @IBOutlet weak var lBO: UIButton!
-    @IBOutlet weak var lO: UIImageView!
     @IBOutlet weak var iFO: UIView!
     @IBOutlet weak var cBO: UIButton!
+    @IBOutlet weak var lO: UILabel!
     
     @IBAction func loginAct(_ sender: UIButton) {
         let email = (!tF1.text!.isEmpty) ? tF1.text : nil
@@ -47,6 +47,14 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         tF1.delegate = self
         tF2.delegate = self
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .portrait
+        } else {
+            return .all
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,6 +92,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
+    
     func signIn(){
         Auth.auth().signIn(withEmail: tF1.text!, password: tF2.text!) { (result, error) in
             
@@ -93,7 +106,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 print(self.user!.uid.description)
                 self.errO.alpha = 0
                 
-                self.performSegue(withIdentifier: "testTrans", sender: self)
+                self.performSegue(withIdentifier: "catVCSegue", sender: self)
             }
             else{
                 self.errO.text = "INVALID LOGIN!"
@@ -102,8 +115,5 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         }
           
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let dest = segue.destination as! RecipesVCTableViewController
-//    }
+
 }

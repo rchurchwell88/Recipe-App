@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var playerLayer:AVPlayerLayer?
 
     
-    @IBOutlet weak var lO: UIImageView!
+    @IBOutlet weak var lO: UILabel!
     @IBOutlet weak var vO: UIView!
     @IBOutlet weak var LoginO: UIButton!
     @IBAction func toRegister(_ sender: UIButton) {
