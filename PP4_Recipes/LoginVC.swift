@@ -50,11 +50,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .portrait
-        } else {
-            return .all
-        }
+       return .portrait
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,10 +86,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
     }
     
     

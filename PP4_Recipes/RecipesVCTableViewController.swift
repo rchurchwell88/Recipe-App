@@ -36,11 +36,7 @@ class RecipesVCTableViewController: UITableViewController {
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .portrait
-        } else {
-            return .all
-        }
+        return .portrait
     }
 
     // MARK: - Table view data source
@@ -59,11 +55,12 @@ class RecipesVCTableViewController: UITableViewController {
         
         data=recDataArray[indexPath.row]
         
-        performSegue(withIdentifier: "toWebView", sender: self)
+        performSegue(withIdentifier: "toRecDet", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as? WebViewVC
+        let dest = segue.destination as? RecDetViewController
+        
         dest?.data=data
     }
 
@@ -76,6 +73,11 @@ class RecipesVCTableViewController: UITableViewController {
         cell.detailTextLabel?.text = "Calories: \(tmpObject.recCalories ?? "N/A")"
 
         return cell
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     func testXcode() {
@@ -91,8 +93,10 @@ class RecipesVCTableViewController: UITableViewController {
                 let recName = recTop!["label"] as? String
                 let calString = recTop!["calories"] as? Double
                 let url = recTop!["url"] as? String
+                let ingreds = recTop!["ingredients"] as? [[String:Any]]
+                let warnings = recTop!["cautions"] as? [String]
                 
-                self.recDataArray.append(RecData(rName: recName!, rCalories: Int(calString!).description, url: url!))
+                self.recDataArray.append(RecData(rName: recName!, rCalories: Int(calString!).description, url: url!, ingr: ingreds!, cau: warnings!))
                 
                 
                 self.testArray.append(recName!)

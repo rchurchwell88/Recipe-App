@@ -8,13 +8,15 @@
 import UIKit
 import AVKit
 
-class CategoryViewController: UIViewController {
+class CategoryViewController: UIViewController, UITextFieldDelegate {
 
     var tmpText:String?
     var player:AVPlayer?
     var playerLayer:AVPlayerLayer?
     
+    
     @IBOutlet weak var sView: UIView!
+    
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var sButton: UIButton!
     @IBOutlet weak var lO: UILabel!
@@ -22,7 +24,12 @@ class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        searchField.delegate=self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,11 +37,7 @@ class CategoryViewController: UIViewController {
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .portrait
-        } else {
-            return .all
-        }
+        return .portrait
     }
     
     @IBAction func searchAction(_ sender: UIButton) {

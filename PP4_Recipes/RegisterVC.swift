@@ -46,11 +46,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .portrait
-        } else {
-            return .all
-        }
+        return .portrait
     }
     
     func setupLRBackground(){

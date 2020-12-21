@@ -20,6 +20,7 @@
 		98BC09B8257DB100005C7899 /* RecipesVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC09B7257DB100005C7899 /* RecipesVCTableViewController.swift */; };
 		98BC09BB257DB359005C7899 /* CCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC09BA257DB359005C7899 /* CCellTableViewCell.swift */; };
 		98C502F72586ED810055F0A4 /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C502F62586ED810055F0A4 /* WebViewVC.swift */; };
+		98CBDF9C258C4B4F004D29CA /* RecDetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CBDF9B258C4B4F004D29CA /* RecDetViewController.swift */; };
 		98DA3C452578B90400EDACCD /* Chef.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 98DA3C442578B90400EDACCD /* Chef.mp4 */; };
 		98DA3C482578D3B800EDACCD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98DA3C472578D3B800EDACCD /* Images.xcassets */; };
 		98DDB0E7257B44AD009F58A4 /* Chef3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 98DDB0E6257B44AD009F58A4 /* Chef3.mp4 */; };
@@ -47,6 +48,7 @@
 		98BC09B7257DB100005C7899 /* RecipesVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesVCTableViewController.swift; sourceTree = "<group>"; };
 		98BC09BA257DB359005C7899 /* CCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCellTableViewCell.swift; sourceTree = "<group>"; };
 		98C502F62586ED810055F0A4 /* WebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
+		98CBDF9B258C4B4F004D29CA /* RecDetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecDetViewController.swift; sourceTree = "<group>"; };
 		98DA3C442578B90400EDACCD /* Chef.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chef.mp4; sourceTree = "<group>"; };
 		98DA3C472578D3B800EDACCD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		98DDB0E6257B44AD009F58A4 /* Chef3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chef3.mp4; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				98E20D6B2585BB7F0002412A /* RecData.swift */,
 				98B568DA2585E02D0069A87E /* CategoryViewController.swift */,
 				98C502F62586ED810055F0A4 /* WebViewVC.swift */,
+				98CBDF9B258C4B4F004D29CA /* RecDetViewController.swift */,
 			);
 			path = PP4_Recipes;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				98C502F72586ED810055F0A4 /* WebViewVC.swift in Sources */,
 				98AAD477256F434400F0AEF6 /* AppDelegate.swift in Sources */,
 				98AAD481256F434400F0AEF6 /* PP4_Recipes.xcdatamodeld in Sources */,
+				98CBDF9C258C4B4F004D29CA /* RecDetViewController.swift in Sources */,
 				98ECEE82257899EC00C4580F /* RegisterVC.swift in Sources */,
 				98AAD479256F434400F0AEF6 /* SceneDelegate.swift in Sources */,
 				98BC09B8257DB100005C7899 /* RecipesVCTableViewController.swift in Sources */,
